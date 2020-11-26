@@ -3,7 +3,6 @@ package pl.hennig.kurnik.kurnik.gui;
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.menubar.MenuBar;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
-import com.vaadin.flow.component.page.Push;
 
 public class MenuGui extends VerticalLayout {
     public MenuGui(){
@@ -13,7 +12,7 @@ public class MenuGui extends VerticalLayout {
     {
         MenuBar menuBar = new MenuBar();
         menuBar.addItem("Chat", e -> {
-            UI.getCurrent().navigate("chat");
+            UI.getCurrent().navigate("");
         });
         menuBar.addItem("Settings", e -> {
             UI.getCurrent().navigate("settings");

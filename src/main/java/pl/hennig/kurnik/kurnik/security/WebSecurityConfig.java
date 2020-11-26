@@ -8,7 +8,6 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import pl.hennig.kurnik.kurnik.model.User;
@@ -36,11 +35,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/chat").authenticated()
+                .antMatchers("/").authenticated()
                 .antMatchers("/settings").authenticated()
                 .antMatchers("/profile").authenticated()
                 .and()
-                .formLogin().loginPage("/login").permitAll().defaultSuccessUrl("/chat", true).loginProcessingUrl("/login")
+                .formLogin().loginPage("/login").permitAll().defaultSuccessUrl("/", true).loginProcessingUrl("/login")
                 .and()
                 .logout().logoutSuccessUrl("/login");
 

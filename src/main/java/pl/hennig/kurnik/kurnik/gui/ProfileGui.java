@@ -13,20 +13,6 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import pl.hennig.kurnik.kurnik.model.User;
 import pl.hennig.kurnik.kurnik.repository.UserRepo;
 import pl.hennig.kurnik.kurnik.service.ProfileService;
-
-import com.vaadin.flow.component.Html;
-import com.vaadin.flow.component.UI;
-import com.vaadin.flow.component.html.Image;
-import com.vaadin.flow.component.html.Label;
-import com.vaadin.flow.component.orderedlayout.VerticalLayout;
-import com.vaadin.flow.component.upload.Upload;
-import com.vaadin.flow.component.upload.receivers.MemoryBuffer;
-import com.vaadin.flow.router.*;
-import com.vaadin.flow.server.AbstractStreamResource;
-import org.springframework.security.core.context.SecurityContextHolder;
-import pl.hennig.kurnik.kurnik.model.User;
-import pl.hennig.kurnik.kurnik.repository.UserRepo;
-
 import java.awt.*;
 import java.util.List;
 import java.util.Map;

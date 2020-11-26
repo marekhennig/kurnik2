@@ -1,6 +1,6 @@
 package pl.hennig.kurnik.kurnik.gui;
 
-import com.vaadin.flow.component.UI;
+
 import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.*;
@@ -9,7 +9,6 @@ import pl.hennig.kurnik.kurnik.model.Token;
 import pl.hennig.kurnik.kurnik.model.User;
 import pl.hennig.kurnik.kurnik.repository.TokenRepo;
 import pl.hennig.kurnik.kurnik.repository.UserRepo;
-
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Map;

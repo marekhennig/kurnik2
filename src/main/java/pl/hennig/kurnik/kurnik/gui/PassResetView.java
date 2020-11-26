@@ -18,8 +18,6 @@ import pl.hennig.kurnik.kurnik.model.Token;
 import pl.hennig.kurnik.kurnik.model.User;
 import pl.hennig.kurnik.kurnik.repository.TokenRepo;
 import pl.hennig.kurnik.kurnik.repository.UserRepo;
-
-
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;

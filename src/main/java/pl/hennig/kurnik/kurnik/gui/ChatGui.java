@@ -2,16 +2,11 @@ package pl.hennig.kurnik.kurnik.gui;
 
 
 import com.vaadin.flow.component.Component;
-import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
-import com.vaadin.flow.component.dependency.StyleSheet;
 import com.vaadin.flow.component.dialog.Dialog;
 import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.html.Label;
-import com.vaadin.flow.component.html.Paragraph;
-
-import com.vaadin.flow.component.menubar.MenuBar;
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
@@ -20,7 +15,6 @@ import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.Route;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
-
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.util.FileCopyUtils;
 import pl.hennig.kurnik.kurnik.model.ChatMessage;
@@ -28,17 +22,17 @@ import pl.hennig.kurnik.kurnik.model.MessageList;
 import pl.hennig.kurnik.kurnik.model.User;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.UnicastProcessor;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Stream;
 
 
-
-@Route("chat")
+@Route("")
 @Push
+
 public class ChatGui extends VerticalLayout {
 
 

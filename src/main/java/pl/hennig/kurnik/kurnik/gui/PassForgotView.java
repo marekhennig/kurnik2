@@ -8,11 +8,7 @@ import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.EmailField;
 import com.vaadin.flow.data.binder.Binder;
-import com.vaadin.flow.data.validator.EmailValidator;
 import com.vaadin.flow.data.validator.RegexpValidator;
-import com.vaadin.flow.router.BeforeEvent;
-import com.vaadin.flow.router.HasUrlParameter;
-import com.vaadin.flow.router.QueryParameters;
 import com.vaadin.flow.router.Route;
 import org.springframework.beans.factory.annotation.Autowired;
 import pl.hennig.kurnik.kurnik.model.Token;
@@ -23,7 +19,6 @@ import pl.hennig.kurnik.kurnik.service.MailService;
 
 import javax.mail.MessagingException;
 import java.time.LocalDateTime;
-import java.util.Map;
 import java.util.Optional;
 
 

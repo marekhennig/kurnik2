@@ -1,7 +1,6 @@
 package pl.hennig.kurnik.kurnik.gui;
 
 
-import com.google.common.hash.Hashing;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
@@ -17,9 +16,7 @@ import pl.hennig.kurnik.kurnik.model.User;
 import pl.hennig.kurnik.kurnik.repository.TokenRepo;
 import pl.hennig.kurnik.kurnik.repository.UserRepo;
 import pl.hennig.kurnik.kurnik.service.MailService;
-
 import javax.mail.MessagingException;
-import java.nio.charset.StandardCharsets;
 import java.time.LocalDateTime;
 import java.util.Optional;
 

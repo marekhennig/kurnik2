@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Bean;
 import pl.hennig.kurnik.kurnik.model.ChatMessage;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.UnicastProcessor;
+
 @SpringBootApplication(scanBasePackages = {"pl.hennig.kurnik.kurnik", "org.springframework.security.config.annotation.web.builders"})
 public class KurnikApplication {
     public static void main(String[] args) {

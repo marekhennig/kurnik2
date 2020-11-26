@@ -2,7 +2,6 @@ package pl.hennig.kurnik.kurnik.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import pl.hennig.kurnik.kurnik.model.Token;
-import pl.hennig.kurnik.kurnik.model.User;
 
 import java.util.Optional;
 
