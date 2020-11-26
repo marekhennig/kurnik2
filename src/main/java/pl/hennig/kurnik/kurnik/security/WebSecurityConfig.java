@@ -35,13 +35,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/").authenticated()
+                .antMatchers("/chat").authenticated()
                 .antMatchers("/settings").authenticated()
                 .antMatchers("/profile").authenticated()
+                .antMatchers("/reset").authenticated()
                 .and()
-                .formLogin().loginPage("/login").permitAll().defaultSuccessUrl("/", true).loginProcessingUrl("/login")
+                .formLogin().loginPage("/").permitAll().defaultSuccessUrl("/chat", true).loginProcessingUrl("/login")
                 .and()
-                .logout().logoutSuccessUrl("/login");
+                .logout().logoutSuccessUrl("/");
 
 
     }

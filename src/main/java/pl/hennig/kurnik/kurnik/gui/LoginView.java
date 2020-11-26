@@ -15,7 +15,7 @@ import java.util.Collections;
 @Route(value = LoginView.ROUTE)
 @PageTitle("Login")
 public class LoginView extends VerticalLayout implements BeforeEnterObserver { //
-    public static final String ROUTE = "login";
+    public static final String ROUTE = "";
 
     private LoginForm login = new LoginForm();
 

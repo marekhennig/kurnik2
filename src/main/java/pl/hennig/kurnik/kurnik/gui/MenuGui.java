@@ -3,16 +3,14 @@ package pl.hennig.kurnik.kurnik.gui;
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.menubar.MenuBar;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import org.springframework.security.core.context.SecurityContextHolder;
 
 public class MenuGui extends VerticalLayout {
-    public MenuGui(){
-
-    }
     public MenuBar getMenuBarLogged()
     {
         MenuBar menuBar = new MenuBar();
         menuBar.addItem("Chat", e -> {
-            UI.getCurrent().navigate("");
+            UI.getCurrent().navigate("chat");
         });
         menuBar.addItem("Settings", e -> {
             UI.getCurrent().navigate("settings");
@@ -21,7 +19,8 @@ public class MenuGui extends VerticalLayout {
             UI.getCurrent().navigate("profile");
         });
         menuBar.addItem("Logout", e -> {
-            UI.getCurrent().navigate("logout");
+            SecurityContextHolder.clearContext();
+            UI.getCurrent().navigate("");
         });
         add(menuBar);
         return menuBar;
@@ -30,7 +29,7 @@ public class MenuGui extends VerticalLayout {
     {
         MenuBar menuBar = new MenuBar();
         menuBar.addItem("Login", e -> {
-            UI.getCurrent().navigate("login");
+            UI.getCurrent().navigate("");
         });
         menuBar.addItem("Register", e -> {
             UI.getCurrent().navigate("registration");
