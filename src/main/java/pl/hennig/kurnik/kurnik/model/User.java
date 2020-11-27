@@ -50,6 +50,10 @@ public class User implements UserDetails {
         revers = Revers.DEFAULT;
         isPrivate = false;
     }
+    public User()
+    {
+        //This constructor is important to login, added again to fix login
+    }
     public String getUsername() {
         return username;
     }
