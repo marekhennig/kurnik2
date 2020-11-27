@@ -1,6 +1,4 @@
 package pl.hennig.kurnik.kurnik.gui;
-
-
 import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.*;
@@ -13,19 +11,15 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-
 @Route("active")
 public class ActivationGui extends VerticalLayout implements HasUrlParameter<String> {
-
     private UserRepo userRepo;
     private TokenRepo tokenRepo;
     @Autowired
     public ActivationGui(UserRepo userRepo,TokenRepo tokenRepo) {
         this.tokenRepo = tokenRepo;
         this.userRepo = userRepo;
-
     }
-
     @Override
     public void setParameter(BeforeEvent beforeEvent, @OptionalParameter String s) {
         Location location = beforeEvent.getLocation();
@@ -45,7 +39,6 @@ public class ActivationGui extends VerticalLayout implements HasUrlParameter<Str
                     labelUser.setText("Wrong token");
                 }
             }
-
             else {
                 labelUser.setText("Your token expired");
             }
@@ -54,6 +47,5 @@ public class ActivationGui extends VerticalLayout implements HasUrlParameter<Str
             labelUser.setText("We couldnt find user");
         }
         add(labelUser);
-
     }
 }

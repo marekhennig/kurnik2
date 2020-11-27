@@ -39,26 +39,19 @@ public class PassResetView extends VerticalLayout implements HasUrlParameter<Str
         this.passwordEncoder = passwordEncoder;
         this.tokenRepo = tokenRepo;
         this.userRepo = userRepo;
-
     }
-
-
     @Override
     public void setParameter(BeforeEvent beforeEvent, @OptionalParameter String s) {
         Location location = beforeEvent.getLocation();
         QueryParameters queryParameters = location.getQueryParameters();
         Map<String, List<String>> map = queryParameters.getParameters();
-
         if (map.isEmpty()) {
-
             try {
                 this.user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
                 addLayout();
             } catch (Exception e) {
                 UI.getCurrent().navigate("logout");
             }
-
-
         } else {
             String token = map.get("token").get(0);
             Optional<Token> userToken = tokenRepo.findTokenByToken(token);
@@ -71,17 +64,12 @@ public class PassResetView extends VerticalLayout implements HasUrlParameter<Str
                 Notification notification = new Notification("We couldn't find user ", 3000);
                 notification.open();
             }
-
         }
-
-
     }
-
     public void addLayout() {
         H1 header = new H1("Hello " + this.user.getUsername());
         header.getStyle().set("color", "#00688B");
         Label label = new Label("Password reset");
-
         binder.forField(passwordField)
                 .withValidator(new RegexpValidator("Password should contain lowercase and uppercase letters and digits and be at least 8 characters long", "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=\\S+$).{8,32}$"))
                 .bind(User::getPassword, User::setPassword);
@@ -99,14 +87,12 @@ public class PassResetView extends VerticalLayout implements HasUrlParameter<Str
         });
         add(header, label, passwordField, repasswordField, button);
     }
-
     private Boolean rePasswordValidator(String password) {
         if (password.equals(passwordField.getValue())) {
             return true;
         }
         return false;
     }
-
     private Boolean passwordValidator(String password) {
         if (password.matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=\\S+$).{8,32}$")) {
 
@@ -114,7 +100,4 @@ public class PassResetView extends VerticalLayout implements HasUrlParameter<Str
         }
         return false;
     }
-
-
-
 }

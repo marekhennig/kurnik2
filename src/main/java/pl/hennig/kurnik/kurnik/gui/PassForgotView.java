@@ -24,11 +24,9 @@ import java.util.Optional;
 
 @Route("forgot")
 public class PassForgotView extends VerticalLayout {
-
     private UserRepo userRepo;
     private MailService mailService;
     private TokenRepo tokenRepo;
-
     @Autowired
     public PassForgotView(UserRepo userRepo, MailService mailService, TokenRepo tokenRepo) {
         MenuGui menuGui = new MenuGui();
@@ -42,7 +40,6 @@ public class PassForgotView extends VerticalLayout {
         binder.forField(emailField)
                 .withValidator(new RegexpValidator("^([a-zA-Z0-9_\\.\\-+])+@[a-zA-Z0-9-.]+\\.[a-zA-Z0-9-]{2,}$", "This is not email"))
                 .bind(User::getEmail, User::setEmail);
-
         Button button = new Button("Verify");
         button.addClickListener(buttonClickEvent -> {
             if (emailValidator(emailField.getValue())) {
@@ -60,7 +57,6 @@ public class PassForgotView extends VerticalLayout {
                         System.out.println("sadzas");
                     }
                     UI.getCurrent().navigate("login");
-
                 } else {
                     Notification notification = new Notification("There is no user with that username", 3000);
                     notification.open();
@@ -69,13 +65,10 @@ public class PassForgotView extends VerticalLayout {
         });
         add(label, emailField, button);
     }
-
     private Boolean emailValidator(String email) {
         if (email.matches("^([a-zA-Z0-9_\\.\\-+])+@[a-zA-Z0-9-.]+\\.[a-zA-Z0-9-]{2,}$")) {
             return true;
         }
         return false;
     }
-
-
 }

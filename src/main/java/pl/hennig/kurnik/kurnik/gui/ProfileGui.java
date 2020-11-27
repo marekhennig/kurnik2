@@ -20,7 +20,6 @@ import java.util.Optional;
 
 @Route("profile")
 public class ProfileGui extends VerticalLayout implements HasUrlParameter<String> {
-
     private ProfileService profileService;
     private User user;
     private UserRepo userRepo;
@@ -32,14 +31,12 @@ public class ProfileGui extends VerticalLayout implements HasUrlParameter<String
         this.profileService = profileService;
         this.userRepo = userRepo;
     }
-
     @Override
     public void setParameter(BeforeEvent beforeEvent, @OptionalParameter String s) {
         Location location = beforeEvent.getLocation();
         QueryParameters queryParameters = location.getQueryParameters();
         Map<String, List<String>> map = queryParameters.getParameters();
         if (map.isEmpty()) {
-
             Dialog dialog = new Dialog();
             TextField textField = new TextField();
             Button button = new Button("Search");
@@ -66,10 +63,7 @@ public class ProfileGui extends VerticalLayout implements HasUrlParameter<String
                 addLayout();
             }
         }
-
     }
-
-
     private void addLayout() {
         if (!user.isPrivate() || user == (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal()) {
             auth = true;
@@ -85,8 +79,5 @@ public class ProfileGui extends VerticalLayout implements HasUrlParameter<String
             emailDiv.add(user.getEmail());
             add(emailDiv);
         }
-
-
     }
-
 }

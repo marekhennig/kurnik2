@@ -45,9 +45,6 @@ public class SettingsGui extends VerticalLayout {
         Div divChangeEmail = new Div(new Label("Change email"));
         Button changeEmailButton = new Button("Change");
         changeEmailButton.addClickListener(buttonClickEvent -> changeEmail());
-        changeEmailButton.addClickListener(buttonClickEvent -> {
-            changeEmail();
-        });
         divChangeEmail.add(new VerticalLayout(changeEmailButton), new Hr());
 
         Div changeReversDiv = new Div();

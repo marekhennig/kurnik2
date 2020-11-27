@@ -61,12 +61,6 @@ public class RegistrationGui extends VerticalLayout {
                     e.printStackTrace();
                 }
             }
-            {
-
-            }
-
-
-
         });
 
         add(textFieldUsername,emailField,this.passwordField,this.rePasswordField,buttonSubmit,usernameInDatabase,emailInDatabase);
@@ -97,9 +91,6 @@ public class RegistrationGui extends VerticalLayout {
         return textField;
 
     }
-
-
-
 
     private PasswordField passwordField(){
         PasswordField passwordField = new PasswordField();
@@ -159,12 +150,6 @@ public class RegistrationGui extends VerticalLayout {
         return false;
     }
 
-
-
-
-
-
-
     private void saveUser(String username,String email, String password) throws MessagingException {
 
 
@@ -209,9 +194,5 @@ public class RegistrationGui extends VerticalLayout {
 
         return false;
     }
-
-
-
-
 
 }

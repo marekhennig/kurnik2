@@ -1,5 +1,4 @@
 package pl.hennig.kurnik.kurnik.security;
-
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,24 +12,19 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import pl.hennig.kurnik.kurnik.model.User;
 import pl.hennig.kurnik.kurnik.repository.UserRepo;
 import pl.hennig.kurnik.kurnik.service.UserDetailsServiceImpl;
-
-
 @EnableWebSecurity
 @Configuration
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     private UserDetailsServiceImpl userDetailsService;
     private UserRepo userRepo;
-
     public WebSecurityConfig(UserDetailsServiceImpl userDetailsService, UserRepo userRepo) {
         this.userDetailsService = userDetailsService;
         this.userRepo = userRepo;
     }
-
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(userDetailsService);
     }
-
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable()
@@ -43,17 +37,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .formLogin().loginPage("/").permitAll().defaultSuccessUrl("/chat", true).loginProcessingUrl("/login")
                 .and()
                 .logout().logoutSuccessUrl("/");
-
-
     }
-
-
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
-
-
     @EventListener(ApplicationReadyEvent.class)
     public void saveUser() {
         User user = new User("test1", "test1@asf.com", passwordEncoder().encode("test1"), "USER", true);

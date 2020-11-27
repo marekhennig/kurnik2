@@ -12,7 +12,6 @@ public class MessageList extends Div {
     @Override
     public void add(Component... components) {
         super.add(components);
-
         components[components.length - 1]
                 .getElement()
                 .callJsFunction("scrollIntoView");

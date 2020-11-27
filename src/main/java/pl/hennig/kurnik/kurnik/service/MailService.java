@@ -1,7 +1,6 @@
 package pl.hennig.kurnik.kurnik.service;
 
 import pl.hennig.kurnik.kurnik.model.Token;
-
 import javax.mail.MessagingException;
 
 public interface MailService {
