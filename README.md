@@ -102,10 +102,10 @@ Aplikacja w dalszym ciągu jest w fazie rozwojowej z wyznaczonymi planami i kier
   Rysunek 6 Diagram klas pl.hennig.kurnik.kurnik.gui
 ## 5. Diagram Sekwencji
 
-![DiagramSekwencjiP1](DocsImage/seq1.png)
+![DiagramSekwencjiP1](DocsImage/Seq1.PNG)
 
 Rysunek 5 Diagram sekwencji dla rejestracji
 
-![DiagramSekwencjiP2](DocsImage/seq2.png)
+![DiagramSekwencjiP2](DocsImage/seq2.PNG)
 
  Rysunek 6 Diagram sekwencji dla rejestracji
